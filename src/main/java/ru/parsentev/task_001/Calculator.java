@@ -38,6 +38,9 @@ public class Calculator {
     }
 
     public void expand(double first, double second) {
-        this.result = Math.pow(first, second);
+        this.result = first;
+        for (int i = 0; i < second; i++) {
+            this.result *= first;
+        }
     }
 }
