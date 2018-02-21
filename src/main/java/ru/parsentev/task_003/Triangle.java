@@ -15,22 +15,23 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class Triangle {
     private static final Logger log = getLogger(Triangle.class);
 
-    protected final Point first;
-    protected final Point second;
-    protected final Point third;
+    protected final double ab;
+    protected final double bc;
+    protected final double ca;
+    protected boolean notATriangle;
 
     public Triangle(final Point first, final Point second, final Point third) {
-        this.first = first;
-        this.second = second;
-        this.third = third;
+        this.ab = first.distanceTo(second);
+        this.bc = second.distanceTo(third);
+        this.ca = third.distanceTo(first);
+        if (!(notATriangle = first.linCheck(second, third))) {
+            notATriangle = first.equals(second) || second.equals(third) || first.equals(third);
+        }
     }
 
     public boolean exists() {
         boolean result = true;
-        if (first.equals(second) || second.equals(third) || first.equals(third)) {
-            result = false;
-        }
-        if (first.linCheck(second, third)) {
+        if (notATriangle) {
             result = false;
         }
         return result;
@@ -38,8 +39,8 @@ public class Triangle {
 
     public double area() {
         if (this.exists()) {
-            double p = (first.distanceTo(second) + first.distanceTo(third) + second.distanceTo(third)) / 2;
-            double result = Math.sqrt(p * (p - first.distanceTo(second)) * (p - first.distanceTo(third)) * (p - second.distanceTo(third)));
+            double p = (this.ab + this.bc + this.ca) / 2;
+            double result = Math.sqrt(p * (p - this.ab) * (p - this.bc) * (p - this.ca));
             return Math.round(result);
         } else {
             throw new IllegalStateException();

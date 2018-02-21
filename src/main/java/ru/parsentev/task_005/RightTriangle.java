@@ -8,9 +8,7 @@ import ru.parsentev.task_003.Triangle;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import static java.lang.Math.abs;
-import static java.lang.Math.pow;
-import static java.lang.Math.sqrt;
+import static java.lang.Math.*;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
@@ -28,6 +26,16 @@ public class RightTriangle extends Triangle {
 
     @Override
     public boolean exists() {
-        return super.exists();
+        boolean result = super.exists();
+        if (result) {
+            if ((pow(this.ab, 2) + pow(this.bc, 2) == pow(this.ca, 2)) ||
+                    (pow(this.ca, 2) + pow(this.bc, 2) == pow(this.ab, 2)) ||
+                    (pow(this.ca, 2) + pow(this.ab, 2) == round(pow(this.bc, 2)))) {
+                result = true;
+            } else {
+                result = false;
+            }
+        }
+        return result;
     }
 }

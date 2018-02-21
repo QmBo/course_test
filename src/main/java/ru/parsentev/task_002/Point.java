@@ -38,7 +38,8 @@ public class Point {
 
     public boolean linCheck(Point second, Point third) {
         boolean result = false;
-        if ((this.x == second.x)&&(this.x == third.x)||(this.xEqualsY() && second.xEqualsY() && third.xEqualsY())) {
+        if ((this.x == second.x)&&(this.x == third.x) || (this.y == second.y)&&(this.y == third.y) ||
+                (this.xEqualsY() && second.xEqualsY() && third.xEqualsY())) {
             result = true;
         }
         return result;
@@ -50,5 +51,10 @@ public class Point {
             result = true;
         }
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.x) + String.valueOf(this.y);
     }
 }

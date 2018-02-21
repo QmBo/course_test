@@ -23,9 +23,7 @@ public class IsoscelesTriangle extends Triangle {
     public boolean exists() {
         boolean result = super.exists();
         if (result) {
-            result = ((first.distanceTo(second) == first.distanceTo(third)) ||
-                    (first.distanceTo(second) == second.distanceTo(third)) ||
-                    (second.distanceTo(third) == first.distanceTo(third)));
+            result = ((this.ab == this.bc) || (this.ab == this.ca) || (this.bc == this.ca));
         }
         return result;
     }
