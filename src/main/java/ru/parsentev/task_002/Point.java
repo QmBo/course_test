@@ -26,11 +26,29 @@ public class Point {
         return Math.sqrt(Math.pow(xDist, 2) + Math.pow(yDist, 2));
     }
 
-//    public int getX() {
-//        return this.x;
-//    }
-//
-//    public int getY() {
-//        return this.y;
-//    }
+    @Override
+    public boolean equals(Object obj) {
+        boolean result = false;
+        Point point = (Point) obj;
+        if ((this.x == point.x) && (this.y == point.y)) {
+            result = true;
+        }
+        return result;
+    }
+
+    public boolean linCheck(Point second, Point third) {
+        boolean result = false;
+        if ((this.x == second.x)&&(this.x == third.x)||(this.xEqualsY() && second.xEqualsY() && third.xEqualsY())) {
+            result = true;
+        }
+        return result;
+    }
+
+    private boolean xEqualsY() {
+        boolean result = false;
+        if (this.x == this.y) {
+            result = true;
+        }
+        return result;
+    }
 }

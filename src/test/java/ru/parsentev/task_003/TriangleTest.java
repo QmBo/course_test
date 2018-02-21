@@ -2,6 +2,7 @@ package ru.parsentev.task_003;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import ru.parsentev.task_002.Point;
 
 import static org.hamcrest.core.Is.is;
@@ -13,7 +14,7 @@ import static org.junit.Assert.*;
  * @author parsentev
  * @since 28.07.2016
  */
-@Ignore
+//@Ignore
 public class TriangleTest {
     @Test
     public void calculateArea() {
