@@ -41,7 +41,7 @@ public class Triangle {
         if (this.exists()) {
             double p = (this.ab + this.bc + this.ca) / 2;
             double result = Math.sqrt(p * (p - this.ab) * (p - this.bc) * (p - this.ca));
-            return Math.round(result);
+            return Math.rint(result);
         } else {
             throw new IllegalStateException();
         }

@@ -28,9 +28,9 @@ public class RightTriangle extends Triangle {
     public boolean exists() {
         boolean result = super.exists();
         if (result) {
-            if ((pow(this.ab, 2) + pow(this.bc, 2) == pow(this.ca, 2)) ||
-                    (pow(this.ca, 2) + pow(this.bc, 2) == pow(this.ab, 2)) ||
-                    (pow(this.ca, 2) + pow(this.ab, 2) == round(pow(this.bc, 2)))) {
+            if (rint((pow(this.ab, 2)) + rint(pow(this.bc, 2))) == rint(pow(this.ca, 2)) ||
+                    (rint(pow(this.ca, 2)) + rint(pow(this.bc, 2))) == rint(pow(this.ab, 2)) ||
+                    (rint(pow(this.ca, 2)) + rint(pow(this.ab, 2))) == rint(pow(this.bc, 2))) {
                 result = true;
             } else {
                 result = false;
