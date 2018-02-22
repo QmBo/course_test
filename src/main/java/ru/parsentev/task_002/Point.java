@@ -57,4 +57,13 @@ public class Point {
     public String toString() {
         return String.valueOf(this.x) + String.valueOf(this.y);
     }
+
+    public boolean linCheckSquare(Point second, Point third, Point fourth) {
+        boolean result = false;
+        if ((this.x == second.x)&&(this.x == third.x) || (this.y == second.y)&&(this.y == third.y) ||
+                (this.xEqualsY() && second.xEqualsY() && third.xEqualsY())) {
+            result = true;
+        }
+        return result;
+    }
 }

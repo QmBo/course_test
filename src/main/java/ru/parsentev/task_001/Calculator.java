@@ -29,9 +29,9 @@ public class Calculator {
         this.result = first * second;
     }
 
-    public void div(double first, double second) {
+    public void div (double first, double second) throws IllegalStateException {
         if (second == 0) {
-            throw new java.lang.IllegalStateException();
+            throw new IllegalStateException();
         } else {
             this.result = first / second;
         }
