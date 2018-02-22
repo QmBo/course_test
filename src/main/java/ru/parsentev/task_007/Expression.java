@@ -3,8 +3,6 @@ package ru.parsentev.task_007;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
