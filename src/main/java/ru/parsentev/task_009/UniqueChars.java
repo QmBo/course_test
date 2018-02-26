@@ -1,5 +1,7 @@
 package ru.parsentev.task_009;
 
+import java.util.ArrayList;
+
 /**
  * TODO: comment
  *
@@ -14,6 +16,12 @@ public class UniqueChars {
     }
 
     public int unique() {
-        throw new UnsupportedOperationException();
+        ArrayList<Character> unique = new ArrayList<Character>();
+        for (char c : line.toCharArray()) {
+            if (!(unique.contains(c))) {
+                unique.add(c);
+            }
+        }
+        return unique.size();
     }
 }
