@@ -20,6 +20,14 @@ public class ReversePhrase {
     }
 
     public String reverse() {
-        throw new UnsupportedOperationException();
+        String result = new String();
+        String[] rewers = this.line.split(" ");
+        for (int i = rewers.length - 1; i >=0 ; i--) {
+            result += rewers[i];
+            if (i > 0) {
+                result += " ";
+            }
+        }
+        return result;
     }
 }
