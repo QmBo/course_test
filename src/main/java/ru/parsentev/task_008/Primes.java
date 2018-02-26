@@ -3,7 +3,9 @@ package ru.parsentev.task_008;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeSet;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -23,24 +25,26 @@ public class Primes {
     }
 
     public List<Integer> calc() {
-        List<Integer> result = new List<Integer>();
-        for (int i = this.limit-1; i > 0 ; i--) {
+        TreeSet<Integer> temp = new TreeSet<Integer>();
+        for (int i = this.limit; i > 1 ; i--) {
             if (isNormal(i)) {
-                result.add(i);
+                temp.add(i);
             }
         }
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        result.addAll(temp);
         return result;
     }
 
     private boolean isNormal(int input) {
         boolean result = false;
         int twoOrMore = 0;
-        for (int i = input - 1; i > 0; i--) {
+        for (int i = input; i > 0; i--) {
             if ((input%i) == 0) {
                 twoOrMore++;
             }
         }
-        if (twoOrMore < 2) {
+        if (twoOrMore < 3) {
             result = true;
         }
         return result;
