@@ -2,8 +2,10 @@ package ru.parsentev.task_017;
 
 import org.slf4j.Logger;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.Collections.singletonList;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
@@ -22,6 +24,8 @@ public class CashMachine {
     }
 
     public List<List<Integer>> exchange(int note) {
-        throw new UnsupportedOperationException();
+        List<List<Integer>> resilt = new ArrayList<List<Integer>>();
+
+        return resilt;
     }
 }
