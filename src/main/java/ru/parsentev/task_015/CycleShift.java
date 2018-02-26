@@ -21,6 +21,18 @@ public class CycleShift {
     }
 
     public int[] shift(int position) {
-        throw new UnsupportedOperationException();
+        if (this.values.length > 1) {
+            goRight(position);
+        }
+        return this.values;
+    }
+    private void goRight(int tims) {
+        for (int j = 0; j < tims; j++) {
+            int temp = this.values[this.values.length - 1];
+            for (int i = this.values.length - 1; i > 0; i--) {
+                this.values[i] = this.values[i - 1];
+            }
+            this.values[0] = temp;
+        }
     }
 }
