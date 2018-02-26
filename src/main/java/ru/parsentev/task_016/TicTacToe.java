@@ -21,37 +21,40 @@ public class TicTacToe {
     }
 
     public boolean hasWinner() {
-        boolean isAWinner = false;
+        boolean result = false;
         int[] toSend = new int[3];
         for (int i = 0; i < 3; i++) {
             toSend = this.values[i];
             if (exists(toSend)) {
-                isAWinner = true;
+                result = true;
             }
         }
-        for (int j = 0; j < 3; j++) {
-            for (int i = 0; i < 3; i++) {
-                toSend[i] = this.values[i][j];
+        for (int out = 0; out < 3; out++) {
+            toSend = new int[3];
+            for (int in = 0; in < 3; in++) {
+                toSend[in] = this.values[in][out];
             }
             if (exists(toSend)) {
-                isAWinner = true;
+                result = true;
             }
         }
-        for (int i = 0; i < 3; i++) {
-            toSend[i] = this.values[i][i];
+        toSend = new int[3];
+        for (int in = 0; in < 3; in++) {
+            toSend[in] = this.values[in][in];
         }
         if (exists(toSend)) {
-            isAWinner = true;
+            result = true;
         }
-        for (int j = 2; j >= 0; j--) {
-            for (int i = 0; i < 3; i++) {
-                toSend[i] = this.values[i][j];
+        toSend = new int[3];
+        int out = 2;
+            for (int in = 0; in < 3; in++) {
+                toSend[in] = this.values[in][out];
+                out--;
             }
-        }
         if (exists(toSend)) {
-            isAWinner = true;
+            result = true;
         }
-        return isAWinner;
+        return result;
     }
 
     public boolean exists(int[] expect) {
