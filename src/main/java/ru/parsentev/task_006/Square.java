@@ -15,10 +15,10 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class Square {
     private static final Logger log = getLogger(Square.class);
 
-    private final double first;
-    private final double second;
-    private final double third;
-    private final double fourth;
+    private final Double first;
+    private final Double second;
+    private final Double third;
+    private final Double fourth;
     private boolean isSquare;
 
     public Square(final Point first, final Point second, final Point third, final Point fourth) {
@@ -33,6 +33,9 @@ public class Square {
     }
 
     public boolean exists() {
-        throw new UnsupportedOperationException();
+        if (this.first.equals(this.second) && this.first.equals(third) && this.first.equals(fourth)){
+            isSquare = true;
+        }
+        return isSquare;
     }
 }
